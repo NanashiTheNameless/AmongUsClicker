@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Among Us Clicker!</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<style>
+body {
+  padding: 25px;
+  background-color: black;
+  color: white;
+  font-size: 25px;
+}
+
+.light-mode {
+  padding: 25px;
+  background-color: white;
+  color: black;
+  font-size: 25px;
+}
+</style>
+<body>
+<center>
+<script>
+function toggleLightMode() {
+  var element = document.body;
+  element.classList.toggle("light-mode");
+}
+</script>
+<center>
+  <p>Score: <span id="score">0</span></p>
+  <button onclick="buyCrewmate() ">Mini-Crewmate [Cost: <span id="crewmateCost">15</span>] Amount: <span id="crewmate">0</span></button>
+  <button onclick="buyImposter() ">Imposter [Cost: <span id="imposterCost">100</span>] Amount: <span id="imposter">0</span></button>
+  <button onclick="buySkeld() ">Skeld Workers [Cost: <span id="skeldCost">500</span>] Amount: <span id="skelds">0</span></button>
+  <button onclick="buyPolus() ">Polus Miners [Cost: <span id="polusCost">1000</span>] Amount: <span id="poluss">0</span></button>
+  <br>
+  <button onclick="toggleLightMode()">Toggle Light/Dark Mode</button>
+  <br>
+  <img src="red.png" width="420" height="540" onclick="addToscore (1)">
+</center>
+  <script>
+      var score = 0;
+      
+      var crewmateCost = 15;
+      var crewmate = 0;
+      var imposterCost = 100;
+      var imposter = 0;
+      var skeldCost = 500;
+      var skelds = 0;
+      var polusCost = 1000;
+      var poluss = 0;
+
+      score = score + 1;
+
+      function buyCrewmate () {
+           if (score >= crewmateCost) {
+              score = score - crewmateCost;
+              crewmate = crewmate + 1;
+              crewmateCost = Math.round(crewmateCost * 1.15);
+
+document.getElementById("score").innerHTML = score;
+document.getElementById("crewmateCost").innerHTML = crewmateCost;
+document.getElementById("crewmate").innerHTML = crewmate;
+}
+}
+
+      function addToscore (amount) {
+           score = score + amount;
+           document.getElementById("score").innerHTML = score;
+      }
+setInterval (function() {
+    score = score + crewmate;
+
+    document.getElementById("score").innerHTML = score;
+}, 1000); // 1000ms = 1 second
+
+      function buyImposter () {
+           if (score >= imposterCost) {
+              score = score - imposterCost;
+              imposter = imposter + 1;
+              imposterCost = Math.round(imposterCost * 1.15);
+
+document.getElementById("score").innerHTML = score;
+document.getElementById("imposterCost").innerHTML = imposterCost;
+document.getElementById("imposter").innerHTML = imposter;
+}
+}
+
+      function addToscore (amount) {
+           score = score + amount;
+           document.getElementById("score").innerHTML = score;
+      }
+setInterval (function() {
+    score = score + crewmate;
+    score = score + imposter * 10;
+
+    document.getElementById("score").innerHTML = score;
+}, 1000); // 1000ms = 1 second
+
+      function buySkeld () {
+           if (score >= skeldCost) {
+              score = score - skeldCost;
+              skelds = skelds + 1;
+              skeldCost = Math.round(skeldCost * 1.15);
+
+document.getElementById("score").innerHTML = score;
+document.getElementById("skeldCost").innerHTML = skeldCost;
+document.getElementById("skelds").innerHTML = skelds;
+}
+}
+setInterval (function() {
+    score = score + crewmate;
+    score = score + imposter * 10;
+    score = score + skelds * 100;
+      function addToscore (amount) {
+           score = score + amount;
+           document.getElementById("score").innerHTML = score;
+      }
+
+
+    document.getElementById("score").innerHTML = score;
+}, 1000); // 1000ms = 1 second
+
+      function buyPolus () {
+           if (score >= polusCost) {
+              score = score - polusCost;
+              poluss = poluss + 1;
+              polusCost = Math.round(polusCost * 1.15);
+
+document.getElementById("score").innerHTML = score;
+document.getElementById("polusCost").innerHTML = polusCost;
+document.getElementById("poluss").innerHTML = poluss;
+}
+}
+
+      function addToscore (amount) {
+           score = score + amount;
+           document.getElementById("score").innerHTML = score;
+      }
+
+setInterval (function() {
+    score = score + crewmate;
+    score = score + imposter * 10;
+    score = score + skelds * 100;
+    score = score + poluss * 500
+
+
+    document.getElementById("score").innerHTML = score;
+}, 1000); // 1000ms = 1 second
+  </script>
+</center>
+</body>
+</html>
